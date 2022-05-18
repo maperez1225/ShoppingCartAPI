@@ -1,11 +1,9 @@
 package services;
-
-import model.Customer;
+import entity.Customer;
+import entity.CustomerData;
 import provider.CustomerProvider;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
-
 @Path("customer")
 public class CustomerService {
     @GET
@@ -14,9 +12,9 @@ public class CustomerService {
     public Response getCustomer(@QueryParam("id") String id){
         try {
             CustomerProvider provider = new CustomerProvider();
-            Customer customer = provider.getCustomer(Long.parseLong(id));
+            CustomerData data = provider.getData(Long.parseLong(id));
             return Response
-                    .ok(customer)
+                    .ok(data)
                     .header("Content-Type","application/json")
                     .build();
         } catch (Exception e) {

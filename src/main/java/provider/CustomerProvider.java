@@ -1,22 +1,25 @@
 package provider;
 import db.DBConnection;
-import model.Customer;
+import entity.Customer;
+import entity.CustomerData;
+import entity.Order;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 public class CustomerProvider {
-    public Customer getCustomer(long id) throws SQLException, ClassNotFoundException {
+    public CustomerData getData(long id) throws SQLException, ClassNotFoundException {
         DBConnection connection = new DBConnection();
-        ResultSet results = connection.getData("SELECT * FROM A00370027customers WHERE natID="+id);
-        if (results.next()){
-            long natID = results.getLong("natID");
-            String name = results.getString("name");
-            int sqlID = results.getInt("id");
-            connection.close();
-            return new Customer(natID,sqlID,name);
-        }else {
-            connection.close();
-            return null;
+        ResultSet results = connection.getData("SELECT * FROM A00370027orders WHERE customerID="+id);
+        ArrayList<Order> orders = new ArrayList<>();
+        while(results.next()) {
+            int orderID = results.getInt("id");
+            boolean isPaid = results.getBoolean("isPaid");
+            long orderDate = results.getInt("orderDate");
+            long paymentDate = results.getLong("paymentDate");
+            orders.add(new Order(orderID, id, isPaid, orderDate, paymentDate));
         }
+        connection.close();
+        return new CustomerData(id, orders);
     }
     public void create(Customer customer) throws SQLException, ClassNotFoundException {
         DBConnection connection = new DBConnection();
