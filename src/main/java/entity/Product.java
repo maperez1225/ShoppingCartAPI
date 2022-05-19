@@ -2,6 +2,7 @@ package entity;
 public class Product {
     private long barcode;
     private String name;
+    public Product(){}
     public Product(long barcode, String name) {
         this.barcode = barcode;
         this.name = name;

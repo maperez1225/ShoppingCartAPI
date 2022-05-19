@@ -2,8 +2,7 @@ package entity;
 public class Customer {
     private long natID;
     private String name;
-    public Customer(){
-    }
+    public Customer(){}
     public Customer(long natID){
         this.natID = natID;
     }

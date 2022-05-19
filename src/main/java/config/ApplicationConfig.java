@@ -1,7 +1,5 @@
 package config;
-import services.CustomerService;
-import services.OrderService;
-import services.ProductService;
+import services.*;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
@@ -14,6 +12,7 @@ public class ApplicationConfig extends Application {
         res.add(CustomerService.class);
         res.add(ProductService.class);
         res.add(OrderService.class);
+        res.add(ItemService.class);
         return res;
     }
 }

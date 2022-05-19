@@ -5,6 +5,7 @@ public class Order {
     private boolean isPaid;
     private long orderDate;
     private long paymentDate;
+    public Order(){}
     public Order(int orderID, long id, boolean isPaid, long orderDate, long paymentDate) {
         this.orderID = orderID;
         this.id = id;
