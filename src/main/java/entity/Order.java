@@ -15,16 +15,31 @@ public class Order {
     public int getOrderID() {
         return orderID;
     }
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
+    }
     public long getId() {
         return id;
+    }
+    public void setId(long id) {
+        this.id = id;
     }
     public boolean isPaid() {
         return isPaid;
     }
+    public void setPaid(boolean paid) {
+        isPaid = paid;
+    }
     public long getOrderDate() {
         return orderDate;
     }
+    public void setOrderDate(long orderDate) {
+        this.orderDate = orderDate;
+    }
     public long getPaymentDate() {
         return paymentDate;
+    }
+    public void setPaymentDate(long paymentDate) {
+        this.paymentDate = paymentDate;
     }
 }

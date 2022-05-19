@@ -34,14 +34,13 @@ public class CustomerService {
             CustomerProvider provider = new CustomerProvider();
             provider.create(customer);
             return Response
-                    .ok(customer)
-                    .header("Content-Type","application/json")
+                    .status(200)
+                    .entity(customer)
                     .build();
         }catch (Exception exception){
             return Response
                     .status(500)
                     .entity(exception.getMessage())
-                    .header("Content-Type","application/json")
                     .build();
         }
     }

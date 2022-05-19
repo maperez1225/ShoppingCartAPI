@@ -10,7 +10,13 @@ public class CustomerData {
     public long getId() {
         return id;
     }
+    public void setId(long id) {
+        this.id = id;
+    }
     public ArrayList<Order> getOrders() {
         return orders;
+    }
+    public void setOrders(ArrayList<Order> orders) {
+        this.orders = orders;
     }
 }

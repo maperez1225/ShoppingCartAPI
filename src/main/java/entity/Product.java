@@ -1,8 +1,11 @@
 package entity;
 public class Product {
-    private int sqlID;
     private long barcode;
     private String name;
+    public Product(long barcode, String name) {
+        this.barcode = barcode;
+        this.name = name;
+    }
     public String getName() {
         return name;
     }

@@ -23,7 +23,7 @@ public class CustomerProvider {
     }
     public void create(Customer customer) throws SQLException, ClassNotFoundException {
         DBConnection connection = new DBConnection();
-        connection.runQuery("INSERT INTO A00370027customers(name, natID) VALUE ("+customer.getName()+","+customer.getNatID()+")");
+        connection.runQuery("INSERT INTO A00370027customers(name, natID) VALUE ('"+customer.getName()+"','"+customer.getNatID()+"')");
         connection.close();
     }
 }
