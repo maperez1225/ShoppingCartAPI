@@ -1,7 +1,6 @@
 package provider;
 import db.DBConnection;
 import entity.Item;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 public class ItemProvider {

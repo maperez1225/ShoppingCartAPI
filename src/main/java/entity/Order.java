@@ -1,14 +1,14 @@
 package entity;
 public class Order {
     private int orderID;
-    private long id;
+    private long customerID;
     private boolean isPaid;
-    private long orderDate;
-    private long paymentDate;
+    private Long orderDate;
+    private Long paymentDate;
     public Order(){}
-    public Order(int orderID, long id, boolean isPaid, long orderDate, long paymentDate) {
+    public Order(int orderID, long customerID, boolean isPaid, long orderDate, long paymentDate) {
         this.orderID = orderID;
-        this.id = id;
+        this.customerID = customerID;
         this.isPaid = isPaid;
         this.orderDate = orderDate;
         this.paymentDate = paymentDate;
@@ -19,11 +19,11 @@ public class Order {
     public void setOrderID(int orderID) {
         this.orderID = orderID;
     }
-    public long getId() {
-        return id;
+    public long getCustomerID() {
+        return customerID;
     }
-    public void setId(long id) {
-        this.id = id;
+    public void setCustomerID(long customerID) {
+        this.customerID = customerID;
     }
     public boolean isPaid() {
         return isPaid;
