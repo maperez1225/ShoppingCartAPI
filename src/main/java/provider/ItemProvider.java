@@ -14,7 +14,7 @@ public class ItemProvider {
         String sql = "SELECT * FROM A00370027products_orders WHERE orderID = '"+orderID+"' AND productID = '"+productID+"'";
         ResultSet results = connection.getData(sql);
         results.next();
-        int currentAmount = results.getInt("cantidad");
+        int currentAmount = results.getInt("amount");
         currentAmount -= amount;
         Item item = null;
         if(currentAmount > 0) {
